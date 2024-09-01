@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "a1a3c71a-6bc6-43b6-9735-78eb9fbdb794",
+		"name": "API Prueba Técnica 3B",
+		"description": "Colección para documentar el ejercicio de prueba técnica del proceso de selección de 3B",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5214963"
+	},
+	"item": [
+		{
+			"name": "api/products/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sku\":\"b6b1d914-85cc-4957-a5b0-c5eab12727cc\",\n    \"name\":\"Pruebamatic ZERO\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				},
+				"description": "Endpoint para crear nuevos productos con un stock base de 100 unidades"
+			},
+			"response": []
+		},
+		{
+			"name": "api/inventories/product/{product_id}",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cantidad\": 350\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/inventories/product/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"inventories",
+						"product",
+						"1"
+					]
+				},
+				"description": "Endpoint para agregar más productos al stock existente del producto indicado con el product_id"
+			},
+			"response": []
+		},
+		{
+			"name": "api/orders/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\":1,\n    \"quantity\": 250\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/orders/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"orders",
+						""
+					]
+				},
+				"description": "Endpoint que genera una orden de compra y consume el stock del producto indicado con el product_id"
+			},
+			"response": []
+		}
+	]
+}
